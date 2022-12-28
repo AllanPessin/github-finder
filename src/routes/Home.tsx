@@ -1,8 +1,8 @@
 import { useState } from "react";
+import Error from "../components/Error";
 import Search from "../components/Search";
 import User from "../components/User";
 import { UserProps } from "../types/user";
-import Error from "../components/Error";
 
 const Home = () => {
   const [user, setUser] = useState<UserProps | null>(null)

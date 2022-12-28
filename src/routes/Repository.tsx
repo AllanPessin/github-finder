@@ -1,7 +1,10 @@
+import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import { useState, useEffect } from "react"
-import { RepositoryProps } from "../types/repos"
+import BackBtn from "../components/BackBtn"
+import Loader from "../components/Loader"
 import Repos from "../components/Repos"
+import styles from "../styles/Repository.module.css"
+import { RepositoryProps } from "../types/repos"
 
 const Repository = () => {
   const { username } = useParams()
@@ -27,9 +30,10 @@ const Repository = () => {
     }
   }, [])
   
-  if(!repos && isLoading) return <p>perainda</p>
+  if(!repos && isLoading) return <Loader />
   return (
-    <div>
+    <div className={styles.repository}>
+      <BackBtn />
       <h2>Explore os repositórios do {username}</h2>
       {repos && repos.length === 0 && <p>Não há repositórios</p>}
       {repos && repos.length > 0 && (
