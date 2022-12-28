@@ -1,9 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import App from './App'
 import './index.css'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Home from './routes/Home'
+import Repository from './routes/Repository'
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home /> 
       },
+      {
+        path: "/repos/:username",
+        element: <Repository />
+      }
     ]
   }
 ])

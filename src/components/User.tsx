@@ -25,7 +25,7 @@ const User = ({ login, avatar_url, location, followers, following }: UserProps) 
           <p className={styles.number}>{following}</p>
         </div>
       </div>     
-      <Link to={`/repos/${login}`}>Ver melhores projetos</Link>
+      <Link to={`/repos/${login}`}>Ver projetos</Link>
     </div>
   )
 }
